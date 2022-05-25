@@ -1,0 +1,81 @@
+body {
+  background-color: rgb(229, 229, 229);
+}
+
+.details-container {
+  padding: 30px;
+}
+
+.details-container h1 {
+  text-align: center;
+}
+
+.details-container h3 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.details-image {
+  border-radius: 10px;
+}
+
+.title-details {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  margin-top: 16px;
+}
+
+.title-details button {
+  background-color: transparent;
+  border: none;
+}
+
+.title-details-2 {
+  margin-bottom: 16px;
+  width: 40vw;
+}
+
+.instructions-content {
+  background-color: #fb8a27ac;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+.video-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.video-content iframe {
+  height: 200px;
+  width: 300px;
+}
+
+.recomendation-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.recomendation-content p {
+  text-align: center;
+}
+
+.bottom-button {
+  border: none;
+  height: 48px;
+  background-color: #fb8a27;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  height: 48px;
+}
