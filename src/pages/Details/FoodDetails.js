@@ -1,65 +1,21 @@
 //ESTILIZAR PARA WEB @media no CSS;
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import PropTypes from 'prop-types';
 import Context from '../../context/Context';
 import APIContext from '../../context/APIContext';
 import { getMealsApiId } from '../../services/mealsApi';
 import { getApiCallback } from '../../helpers/verifyType';
-import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
-import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import shareIcon from '../../images/shareIcon.svg';
 import '../../pages/Details/styles/details.css';
 
 function FoodDetails() {
-  const [isFilled, setIsFilled] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(whiteHeartIcon);
-  const { showMsg, setShowMsg, inProgress, setInProgress, isDone, setIsDone, myMeal, setMyMeal, ingredients, setIngredients, measure, setMeasure } = useContext(Context);
+  const { showMsg, setShowMsg, inProgress, setInProgress, isDone, setIsDone, myMeal, setMyMeal, ingredients, setIngredients, measure, setMeasure, toggleFill, verifyFavorite, isFavorite } = useContext(Context);
   const { drinks } = useContext(APIContext);
   const { id } = useParams();
   const navigation = useNavigate();
 
   const arrayLength = 6;
-
-  const toggleFill = () => {
-    const {
-      strMealThumb,
-      strMeal,
-      strCategory,
-      strArea,
-    } = myMeal[0];
-    const recipe = {
-      id,
-      type: 'food',
-      nationality: strArea,
-      category: strCategory,
-      alcoholicOrNot: '',
-      name: strMeal,
-      image: strMealThumb,
-    };
-    if (isFilled) {
-      setIsFilled(false);
-      setIsFavorite(whiteHeartIcon);
-    } else {
-      const localStorageArray = JSON.parse(localStorage.getItem('favoriteRecipes')) || '';
-      const currentArray = [...localStorageArray];
-      currentArray.push(recipe);
-      localStorage.setItem('favoriteRecipes', JSON.stringify(currentArray));
-      setIsFilled(true);
-      setIsFavorite(blackHeartIcon);
-    }
-  };
-
-  const verifyFavorite = () => {
-    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
-    const getFavorite = favoriteRecipes
-      ? favoriteRecipes.filter((recipe) => recipe.id === id)
-      : [];
-    if (getFavorite.length) {
-      setIsFavorite(blackHeartIcon);
-      setIsFilled(true);
-    }
-  };
 
   useEffect(() => {
     verifyFavorite();

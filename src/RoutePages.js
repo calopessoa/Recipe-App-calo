@@ -12,6 +12,8 @@ import DrinksExplore from './pages/Explore/DrinksExplore';
 import Nationalities from './pages/Nationalities';
 import FoodsIngredients from './pages/Ingredients/FoodsIngredients';
 import DrinksIngredients from './pages/Ingredients/DrinksIngredients';
+import FoodProgress from './pages/InProgress/FoodProgress';
+import DrinkProgress from './pages/InProgress/DrinkProgress';
 
 const RoutePages = () => {
   return (
@@ -19,8 +21,11 @@ const RoutePages = () => {
       <Route exact path="/" element={<Login />} />
       <Route exact path="/foods" element={<Foods />} />
       <Route exact path="/foods/:id" element={ <FoodDetails /> } />
+      <Route exact path="/foods/:id/in-progress" element={ <FoodProgress /> } />
       <Route exact path="/drinks" element={<Drinks />} />
       <Route exact path="/drinks/:id" element={ <DrinkDetails /> } />
+      <Route
+        exact path="/drinks/:id/in-progress" element={<DrinkProgress />} />
       <Route exact path="/profile" element={<Profile />} />
       <Route exact path="/explore" element={<Explore />} />
       <Route exact path="/explore/foods" element={<FoodExplore />} />
