@@ -14,6 +14,7 @@ import FoodsIngredients from './pages/Ingredients/FoodsIngredients';
 import DrinksIngredients from './pages/Ingredients/DrinksIngredients';
 import FoodProgress from './pages/InProgress/FoodProgress';
 import DrinkProgress from './pages/InProgress/DrinkProgress';
+import NotFound from './pages/NotFound';
 
 const RoutePages = () => {
   return (
@@ -36,6 +37,7 @@ const RoutePages = () => {
         exact path="/explore/foods/ingredients" element={<FoodsIngredients />} />
        <Route
         exact path="/explore/drinks/ingredients" element={<DrinksIngredients />} />
+       <Route exact path="*" element={<NotFound />} />
     </Routes>
   );
 };
