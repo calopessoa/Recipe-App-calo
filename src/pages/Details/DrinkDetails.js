@@ -26,7 +26,8 @@ function DrinkDetails() {
     const inProgressRecipes = localStorage.getItem('inProgressRecipes')
       ? JSON.parse(localStorage.getItem('inProgressRecipes')).cocktails
       : [];
-    const isInProgress = Object.keys(inProgressRecipes).filter(
+    console.log(inProgressRecipes);
+    const isInProgress = Object.keys(inProgressRecipes)?.filter(
       (recipe) => recipe === id,
     );
     if (isInProgress.length) {
