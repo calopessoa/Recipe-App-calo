@@ -83,25 +83,34 @@ body {
 .login-page-container {
   background-attachment: fixed;
   background-color: #ebebeb;
-
-  /* background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%); */
   background-size: cover;
-
-  /* border: 1px solid red; */
-
-  /* background-color: #fffb7d; */
   height: 100vh;
   margin: 0;
   width: 100vw;
 }
 
 @media only screen and (min-width: 768px) {
+
+  body {
+    overflow-y:hidden;
+  }
+
+  .login-page-container {
+    background-attachment: fixed;
+    background-color: #ebebeb;
+    background-size: cover;
+    height: 90vh;
+    margin: 0;
+    margin-bottom: 2%;
+    width: 100vw;
+  }
+
   .logo-container {
     width: 500px;
   }
 
   .input-container {
-    margin-top: -30px;
+    margin-top: -60px;
     width: 360px;
   }
 
