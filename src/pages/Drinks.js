@@ -8,8 +8,8 @@ function Drinks() {
   return (
     <>
       <Header />
-      <DrinkCards />
       <DrinkCategories />
+      <DrinkCards />
       <Footer />
     </>
   )

@@ -86,89 +86,95 @@ function FoodDetails() {
 
   return (
     <div className="details-container">
+      <div className="left-column">
+        <img
+          className="details-image"
+          height="200"
+          width="300"
+          data-testid="recipe-photo"
+          src={ strMealThumb }
+          alt={ strMeal }
+        />
+        <div className="title-details">
+          <h2 data-testid="recipe-title">{strMeal}</h2>
+          <button
+            data-testid="share-btn"
+            type="button"
+            onClick={ () => {
+              setShowMsg(true);
+              navigator.clipboard.writeText(window.location.href);
+            } }
+          >
+            <img src={ shareIcon } alt="share" />
+          </button>
+          {showMsg && <p>Link copied!</p>}
+          <button
+            data-testid="favorite-btn"
+            type="button"
+            onClick={ toggleFill }
+            src={ isFavorite }
+          >
+            <img src={ isFavorite } alt="favorite" />
+          </button>
 
-      <img
-        className="details-image"
-        height="200"
-        width="300"
-        data-testid="recipe-photo"
-        src={ strMealThumb }
-        alt={ strMeal }
-      />
-      <div className="title-details">
-        <h2 data-testid="recipe-title">{strMeal}</h2>
-        <button
-          data-testid="share-btn"
-          type="button"
-          onClick={ () => {
-            setShowMsg(true);
-            navigator.clipboard.writeText(window.location.href);
-          } }
-        >
-          <img src={ shareIcon } alt="share" />
-        </button>
-        {showMsg && <p>Link copied!</p>}
-        <button
-          data-testid="favorite-btn"
-          type="button"
-          onClick={ toggleFill }
-          src={ isFavorite }
-        >
-          <img src={ isFavorite } alt="favorite" />
-        </button>
+          <h3 data-testid="recipe-category">{strCategory}</h3>
       </div>
-      <div className="title-details-2">
-        <h3 data-testid="recipe-category">{strCategory}</h3>
-      </div>
+      {/* <div className="title-details-2">
+        
+      </div> */}
       {ingredients.map((ingred, i) => (
         <p key={ i } data-testid={ `${i}-ingredient-name-and-measure` }>
           {`${ingred} - ${measure[i]}`}
         </p>
       ))}
-      <div className="instructions-content">
-        <h2>Instructions</h2>
-        <p data-testid="instructions">{strInstructions}</p>
-      </div>
-      <div className="video-content">
-        <iframe
-          data-testid="video"
-          src={ strYoutube?.replace('watch?', 'embed/') }
-          title="Embedded youtube"
-        />
-      </div>
-      <div>
-        <h1>Recomendation</h1>
-      </div>
-      <section className="recomendation-content">
-        {drinks.slice(0, arrayLength).map((each, i) => {
-          if (i > 1) {
+        </div>
+      <section className="right-column">
+        <div className="instructions-content">
+          <h2>Instructions</h2>
+          <p data-testid="instructions">{strInstructions}</p>
+        </div>
+        <div className="video-content">
+          <iframe
+            data-testid="video"
+            src={ strYoutube?.replace('watch?', 'embed/') }
+            title="Embedded youtube"
+          />
+        </div>
+        <div>
+          <h1>Recomendation</h1>
+        </div>
+        <section className="recomendation-content">
+          {drinks.slice(0, arrayLength).map((each, i) => {
+            if (i > 1) {
+              return (
+                <div key={ i } data-testid={ `${i}-recomendation-card` } hidden>
+                  <img
+                    src={ each.strDrinkThumb }
+                    width="100px"
+                    alt="recommendation"
+                  />
+                  <div data-testid={ `${i}-recomendation-title` }>
+                    {each.strDrink}
+                  </div>
+                </div>
+              );
+            }
             return (
-              <div key={ i } data-testid={ `${i}-recomendation-card` } hidden>
+              <div key={ i } data-testid={ `${i}-recomendation-card` }>
                 <img
                   src={ each.strDrinkThumb }
                   width="100px"
                   alt="recommendation"
                 />
-                <div data-testid={ `${i}-recomendation-title` }>
+                <p data-testid={ `${i}-recomendation-title` }>
                   {each.strDrink}
-                </div>
+                </p>
               </div>
             );
-          }
-          return (
-            <div key={ i } data-testid={ `${i}-recomendation-card` }>
-              <img
-                src={ each.strDrinkThumb }
-                width="100px"
-                alt="recommendation"
-              />
-              <p data-testid={ `${i}-recomendation-title` }>
-                {each.strDrink}
-              </p>
-            </div>
-          );
-        })}
+          })}
+        </section>
       </section>
+
       <section>
         {inProgress && (
           <button

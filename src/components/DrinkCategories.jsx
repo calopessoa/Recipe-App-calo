@@ -20,11 +20,15 @@ function DrinkCategories() {
   };
 
   return (
-    <>
-      Categorias
-      <div>
+    <div className="categoryList-container">
+
+      <div
+        className="container-buttons"
+        aria-label="Basic outlined example"
+      >
         <button
           type="button"
+          className="btn btn-outline-primary"
           data-testid="All-category-filter"
           onClick={ () => getApiDrinks() }
         >
@@ -33,6 +37,7 @@ function DrinkCategories() {
         {categoriesList && categoriesList.map((category) => (
           <button
             type="button"
+            className="btn btn-outline-primary"
             key={ category }
             value={ category }
             data-testid={ `${category}-category-filter` }
@@ -42,7 +47,7 @@ function DrinkCategories() {
           </button>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

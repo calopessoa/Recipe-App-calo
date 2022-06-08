@@ -1,0 +1,38 @@
+.body-profile {
+  background-color: #ebebeb;
+  text-align: center;
+}
+
+.body-profile p {
+  font-weight: 500;
+  margin-top: 70px;
+}
+
+.pages {
+  background-color: #fb8a27;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  margin: 2%;
+  padding: 10px 0;
+  width: 85%;
+}
+
+.logout-btn {
+  background-color: #fb2e27;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  margin-top: 2%;
+  padding: 10px 0;
+  width: 85%;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .pages, .logout-btn {
+    width: 50%;
+  }
+}

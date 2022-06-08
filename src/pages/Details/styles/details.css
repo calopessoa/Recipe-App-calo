@@ -61,7 +61,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   width: 100%;
 }
 
@@ -78,4 +78,72 @@ body {
   font-size: 20px;
   font-weight: 600;
   height: 48px;
+}
+
+@media only screen and (min-width: 385px) {
+  body {
+    max-width: 1990px;
+    overflow-x: hidden;
+  }
+
+  .details-container {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 120px;
+  }
+
+  .details-image {
+    border-radius: 10px;
+    height: 20vw;
+    width: 25vw;
+  }
+
+  .left-column {
+    margin-left: 20px;
+  }
+
+  .right-column {
+    margin-right: 20px;
+    margin-top: -5px;
+  }
+
+  .instructions-content {
+    background-color: #fb8a27ac;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-bottom: 50px;
+    width: 30vw;
+  }
+
+  .title-details {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:left;
+    margin-top: 16px;
+  }
+
+  .title-details button {
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+    max-width: 100px;
+  }
+
+  .bottom-button {
+    border: none;
+    height: 48px;
+    background-color: #fb8a27;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    height: 64px;
+    margin: auto 100%;
+    position:relative;
+  }
+
+
 }

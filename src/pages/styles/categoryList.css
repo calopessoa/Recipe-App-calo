@@ -8,7 +8,7 @@
   margin-bottom: 10%;
 
   /* padding: 1.5%; */
-  width: 100%;
+  width: 100vw;
 }
 
 .categoryList-container h4 {
@@ -38,7 +38,7 @@
   font-weight: 700;
   margin: 0;
   padding: 2%;
-  width: 100px;
+  width: 200px;
 }
 
 .container-buttons button:hover {
@@ -69,4 +69,25 @@
   display: flex;
   justify-content: space-evenly;
   align-items: spac;
+}
+
+@media only screen and (max-width: 700px) {
+  .container-buttons button {
+    border: none;
+    border-right: 1px solid rgb(194, 188, 188);
+    color: black;
+    font-weight: 700;
+    margin: 0;
+    padding: 2%;
+    width: 50%;
+  }
+
+  .container-buttons {
+    align-items: center;
+    /* display: flex; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    margin-top: 25px;
+  }
+
 }

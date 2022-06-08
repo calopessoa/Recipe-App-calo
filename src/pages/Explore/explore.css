@@ -1,0 +1,28 @@
+.body-explore {
+  background-color: #ebebeb;
+  margin-top: 40%;
+  text-align: center;
+}
+
+button {
+  background-color: #f4a865;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  margin: 2%;
+  padding: 10px 0;
+  width: 85%;
+}
+
+@media only screen and (min-width: 800px) {
+
+  .body-explore {
+    margin-top: 10%;
+
+  }
+
+  button {
+    width: 50%;
+  }
+}

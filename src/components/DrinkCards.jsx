@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import APIContext from '../context/APIContext';
+import { Card } from 'react-bootstrap';
+import './styles/cards.css';
 
 function DrinkCards() {
   const { drinks } = useContext(APIContext);
@@ -15,24 +17,29 @@ function DrinkCards() {
   }
 
   return (
-    <div>
+    <div className="col">
       {twelveDrinks && twelveDrinks.map((drink, i) => (
         <Link
           to={ `/drinks/${drink.idDrink}` }
           key={ drink.idDrink }
           data-testid={ `${i}-recipe-card` }
         >
-          <img
-            width="50px"
-            src={ drink.strDrinkThumb }
-            alt={ drink.strDrink }
-            data-testid={ `${i}-card-img` }
-          />
-          <p
-            data-testid={ `${i}-card-name` }
-          >
-            { drink.strDrink }
-          </p>
+          <Card className="mt-4">
+            <img
+              className="card-img-top"
+              width="50px"
+              src={ drink.strDrinkThumb }
+              alt={ drink.strDrink }
+              data-testid={ `${i}-card-img` }
+            />
+            <div className="card-body">
+              <p
+                data-testid={ `${i}-card-name` }
+              >
+                { drink.strDrink }
+              </p>
+            </div>
+          </Card>
         </Link>
 
       ))}

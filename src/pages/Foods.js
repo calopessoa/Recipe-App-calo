@@ -7,8 +7,8 @@ function Foods() {
   return (
     <>
       <Header />
-      <FoodCards />
       <FoodCategories />
+      <FoodCards />
       <Footer />
     </>
   );

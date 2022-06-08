@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import propTypes from 'prop-types';
-import verifyType from '../helpers/verifyType';
+// import { verifyType } from '../helpers/verifyType';
 import APIContext from '../context/APIContext';
 
 const VALUE_INGREDIENTS = 'value-ingredients';
@@ -31,7 +31,7 @@ function Search({ toggleSearch, setToggleSearch }) {
   // };
 
   const handleClick = (radio, inputValue) => {
-    verifyType(meals, drinks, searchInputValue);
+    // verifyType(meals, drinks, searchInputValue);
     if (location.pathname === '/foods') {
       switch (radio) {
       case VALUE_INGREDIENTS:

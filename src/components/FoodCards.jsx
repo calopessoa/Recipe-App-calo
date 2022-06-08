@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import APIContext from '../context/APIContext';
 import { Card } from 'react-bootstrap';
-import './styles/foodcards.css';
+import './styles/cards.css';
 
 function FoodCards() {
   const { meals, clickedCategory } = useContext(APIContext);
