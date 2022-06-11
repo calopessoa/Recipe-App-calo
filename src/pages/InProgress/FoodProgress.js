@@ -6,6 +6,7 @@ import { getMealsApiId } from '../../services/mealsApi';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import shareIcon from '../../images/shareIcon.svg';
+import './inProgress.css';
 
 function FoodProgress() {
   const [recipe, setRecipe] = useState([{}]);
@@ -73,62 +74,61 @@ function FoodProgress() {
   const { strMealThumb, strMeal, strCategory, strInstructions } = recipe[0];
 
   return (
-    <>
-      <div className="card container-card-progress">
-        {/* <button
-        data-testid="favorite-btn"
-        type="button"
-        onClick={ toggleFill }
-        src={ isFavorite }
-        >
-        <img src={ isFavorite } alt="favorite" />
-      </button> */}
-        <img
-          className="card-img-top"
-          // height="200"
-          // width="300"
-          data-testid="recipe-photo"
-          src={ strMealThumb }
-          alt={ strMeal }
-        />
-        <h2
-          className="card-title"
-          data-testid="recipe-title"
-        >
-          {strMeal}
+    <main className="details-container">
+      <section className="left-column">
+        <div className="card container-card-progress">
+          <img
+            className="card-img-top"
+            // height="200"
+            // width="300"
+            data-testid="recipe-photo"
+            src={ strMealThumb }
+            alt={ strMeal }
+          />
+          <h2
+            className="card-title"
+            data-testid="recipe-title"
+          >
+            {strMeal}
 
-        </h2>
+          </h2>
 
-        <h3 data-testid="recipe-category">{strCategory}</h3>
-      </div>
-      <div className="container-share-and-like">
-        <buttonshare-and-like
-          className="like-button-progress"
-          data-testid="favorite-btn"
-          type="button"
-          onClick={ toggleFill }
-          src={ isFavorite }
-        >
-          <img src={ isFavorite } alt="favorite" />
-        </buttonshare-and-like>
-        <button
-          className="share-button-progress"
-          data-testid="share-btn"
-          type="button"
-          onClick={ () => {
-            setShoeMsg(true);
-            navigator.clipboard.writeText(`http://localhost:3000/foods/${id}`);
-          } }
-        >
-          <img src={ shareIcon } alt="share" />
-        </button>
-        {showMsg && <p>Link copied!</p>}
-      </div>
-      <div className="container-instruction-progress">
-        <p data-testid="instructions">{strInstructions}</p>
-      </div>
-      <IngredientProgress />
-    </>
+          <h3 data-testid="recipe-category">{strCategory}</h3>
+        </div>
+        <div className="container-share-and-like">
+          <buttonshare-and-like
+            className="like-button-progress"
+            data-testid="favorite-btn"
+            type="button"
+            onClick={ toggleFill }
+            src={ isFavorite }
+          >
+            <img src={ isFavorite } alt="favorite" />
+          </buttonshare-and-like>
+          <button
+            className="share-button-progress"
+            data-testid="share-btn"
+            type="button"
+            onClick={ () => {
+              setShoeMsg(true);
+              navigator.clipboard.writeText(`http://localhost:3000/foods/${id}`);
+            } }
+          >
+            <img src={ shareIcon } alt="share" />
+          </button>
+          {showMsg && <p>Link copied!</p>}
+        </div>
+
+        <IngredientProgress />
+      </section>
+
+      <section className="right-column">
+        <div className="instructions-content">
+          <p data-testid="instructions">{strInstructions}</p>
+        </div>
+          
+      </section>
+    </main>
   );
 }
 
