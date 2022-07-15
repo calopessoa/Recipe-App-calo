@@ -1,3 +1,10 @@
+That's a group-project that was used as a final exam at Trybe's Front-end module.
+
+The responsabilities were spreaded out evenly, with each member contriburting in every part of this project.
+
+Nevertheless, my main contributions was: [ pages: { details (food and drink), profile and login} ; components: { header, footer, search and profileSpecs };
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
