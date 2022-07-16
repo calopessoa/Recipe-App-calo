@@ -8,5 +8,7 @@ The responsabilities were spreaded out evenly, with each member contriburting in
 
 Nevertheless, my main contributions was: [ pages: { details (food and drink), profile and login} ; components: { header, footer, search and profileSpecs };
 
+One of other contributors: (João Vitor) https://github.com/Jvitorsouza18
+
 
 
